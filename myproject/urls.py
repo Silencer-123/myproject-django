@@ -16,6 +16,7 @@ Including another URLconf
 from pathlib import Path
 from django.contrib import admin
 from django.urls import path,include
+import accounts
 
 from myproject.settings import MEDIA_ROOT
 
@@ -28,4 +29,5 @@ urlpatterns = [
     path('',views.home,name='home'),
     path('store/',include('store.urls')), 
     path('cart/',include('carts.urls')),
+    path('accounts/', include('accounts.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
